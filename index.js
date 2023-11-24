@@ -41,7 +41,7 @@ global.Fca = new Object({
             "PreKey": "",
             "AutoUpdate": true,
             "MainColor": "#00FFFF",
-            "MainName": "[ FCA-DONGDEV ]",
+            "MainName": "《 FCA-DONGDEV 》",
             "Uptime": false,
             "Login2Fa": false,
             "AutoLogin": false,
@@ -1040,9 +1040,9 @@ try {
         Fetch('https://raw.githubusercontent.com/dongdev06/Fca-Dongdev-Remake/main/package.json').then(async (/** @type {{ body: { toString: () => string; }; }} */res) => {
             const localVersion = JSON.parse(readFileSync('./node_modules/fca-dongdev-remake/package.json')).version;
                 if (Number(localVersion.replace(/\./g,"")) < Number(JSON.parse(res.body.toString()).version.replace(/\./g,"")) ) {
-                    log.warn("[ FCA-DONGDEV ] •",getText(Language.NewVersionFound,JSON.parse(readFileSync('./node_modules/fca-dongdev-remake/package.json')).version,JSON.parse(res.body.toString()).version));
+ log.warn("《 FCA-DONGDEV 》 •",getText(Language.NewVersionFound,JSON.parse(readFileSync('./node_modules/fca-dongdev-remake/package.json')).version,JSON.parse(res.body.toString()).version));
                     if (global.Fca.Require.FastConfig.AutoUpdate == true) { 
-                        log.warn("[ FCA-DONGDEV ] •",Language.AutoUpdate);
+                        log.warn("《 FCA-DONGDEV 》 •",Language.AutoUpdate);
                             try {
                                 execSync('npm install fca-dongdev-remake@latest', { stdio: 'inherit' });
                                     logger.Success(Language.UpdateSuccess)
@@ -1066,8 +1066,8 @@ try {
                                     fcasp.onError()
                                 }
                                 catch (e) {
-                                    logger.Normal(Language.NotiAfterUseToolFail, "[ Fca - Helper ]")
-                                        logger.Normal("rmdir ./node_modules after type npm i && npm start","[ Fca - Helper ]");
+                                    logger.Normal(Language.NotiAfterUseToolFail, "《 Fca - Helper 》")
+                                        logger.Normal("rmdir ./node_modules after type npm i && npm start","《 Fca - Helper 》");
                                     process.exit(0);
                                 }
                             }
